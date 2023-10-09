@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_msgs/msg/Trajectory.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module lll_msgs {
+  module msg {
+    struct Trajectory {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "Size of state vector")
+      uint64 nx;
+
+      @verbatim (language="comment", text=
+        "Size of input vector")
+      uint64 nu;
+
+      @verbatim (language="comment", text=
+        "Number of points in trajectory")
+      uint64 length;
+
+      @verbatim (language="comment", text=
+        "List of timestamps (size: 'length')")
+      sequence<int64> times;
+
+      @verbatim (language="comment", text=
+        "List of states (in column major format, size: 'nx*length')")
+      sequence<double> states;
+
+      @verbatim (language="comment", text=
+        "List of inputs (in column major format, size: 'nu*length')")
+      @unit (value="optional")
+      sequence<double> inputs;
+    };
+  };
+};

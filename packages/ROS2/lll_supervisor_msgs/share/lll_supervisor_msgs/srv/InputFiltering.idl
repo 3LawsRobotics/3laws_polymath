@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from lll_supervisor_msgs/srv/InputFiltering.srv
+// generated code does not contain a copyright notice
+
+#include "lll_msgs/msg/Float64VectorStamped.idl"
+#include "lll_supervisor_msgs/msg/InputFilteringResult.idl"
+
+module lll_supervisor_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Filter input        ###")
+    struct InputFiltering_Request {
+      lll_msgs::msg::Float64VectorStamped input_desired;
+    };
+    struct InputFiltering_Response {
+      boolean ready;
+
+      lll_supervisor_msgs::msg::InputFilteringResult res;
+    };
+  };
+};

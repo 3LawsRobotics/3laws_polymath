@@ -1,0 +1,4 @@
+msg/Float64VectorStamped.idl
+msg/Float64VectorStamped.msg
+msg/Trajectory.idl
+msg/Trajectory.msg

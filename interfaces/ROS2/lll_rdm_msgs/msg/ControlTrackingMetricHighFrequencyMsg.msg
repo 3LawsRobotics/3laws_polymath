@@ -1,0 +1,3 @@
+MsgHeader header
+ControlTrackingMetricHighFrequencyMsgData data
+MetricTagsMsgData[] tags

@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_supervisor_msgs/msg/InputFilteringResult.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module lll_supervisor_msgs {
+  module msg {
+    module InputFilteringResult_Constants {
+      const int32 RC_OK = 1;
+      const int32 RC_ERROR = -1;
+    };
+    struct InputFilteringResult {
+      std_msgs::msg::Header header;
+
+      int64 t_input_desired;
+
+      int64 t_regulation_data;
+
+      uint64 nu;
+
+      int32 return_code;
+
+      sequence<double> input_desired;
+
+      sequence<double> input_filtered;
+
+      sequence<double> input_failsafe;
+    };
+  };
+};

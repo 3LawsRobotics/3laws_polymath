@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_supervisor_msgs/msg/InputConstraints.msg
+// generated code does not contain a copyright notice
+
+
+module lll_supervisor_msgs {
+  module msg {
+    struct InputConstraints {
+      @verbatim (language="comment", text=
+        "Number of inputs")
+      uint64 nu;
+
+      @verbatim (language="comment", text=
+        "Number of input constraints")
+      uint64 n_cstr;
+
+      @verbatim (language="comment", text=
+        "Lower bounds")
+      sequence<double> lb;
+
+      @verbatim (language="comment", text=
+        "Transfrom matrix")
+      sequence<double> m;
+
+      @verbatim (language="comment", text=
+        "Upper bounds")
+      sequence<double> ub;
+    };
+  };
+};

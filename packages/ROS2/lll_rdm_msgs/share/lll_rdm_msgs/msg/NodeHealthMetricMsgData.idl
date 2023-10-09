@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/NodeHealthMetricMsgData.msg
+// generated code does not contain a copyright notice
+
+#include "lll_rdm_msgs/msg/NodeHealthMetricMsgTopicData.idl"
+
+module lll_rdm_msgs {
+  module msg {
+    struct NodeHealthMetricMsgData {
+      boolean timeout;
+
+      int64 time_since_last_msg;
+
+      boolean ok;
+
+      sequence<lll_rdm_msgs::msg::NodeHealthMetricMsgTopicData> topics;
+    };
+  };
+};

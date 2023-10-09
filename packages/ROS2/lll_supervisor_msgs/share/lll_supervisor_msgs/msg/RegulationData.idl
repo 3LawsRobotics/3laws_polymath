@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_supervisor_msgs/msg/RegulationData.msg
+// generated code does not contain a copyright notice
+
+#include "lll_supervisor_msgs/msg/InputConstraints.idl"
+#include "std_msgs/msg/Header.idl"
+
+module lll_supervisor_msgs {
+  module msg {
+    struct RegulationData {
+      std_msgs::msg::Header header;
+
+      int64 t;
+
+      uint64 nu;
+
+      uint64 n_safety_cstr;
+
+      uint64 n_failsafes;
+
+      lll_supervisor_msgs::msg::InputConstraints input_cstr;
+
+      sequence<double> lfh;
+
+      sequence<double> lgh;
+
+      sequence<double> dh_dt;
+
+      sequence<double> safety_val;
+
+      sequence<double> failsafe_input;
+    };
+  };
+};

@@ -1,0 +1,6 @@
+string topic_id
+bool timeout
+int64 time_since_last_msg
+SignalAverageMsgData sender_rate
+SignalAverageMsgData receiver_rate
+SignalAverageMsgData delay

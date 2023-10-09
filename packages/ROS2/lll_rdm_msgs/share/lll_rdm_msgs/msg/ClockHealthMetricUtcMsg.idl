@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/ClockHealthMetricUtcMsg.msg
+// generated code does not contain a copyright notice
+
+#include "lll_rdm_msgs/msg/ClockHealthMetricUtcMsgData.idl"
+#include "lll_rdm_msgs/msg/MetricTagsMsgData.idl"
+#include "lll_rdm_msgs/msg/MsgHeader.idl"
+
+module lll_rdm_msgs {
+  module msg {
+    struct ClockHealthMetricUtcMsg {
+      lll_rdm_msgs::msg::MsgHeader header;
+
+      lll_rdm_msgs::msg::ClockHealthMetricUtcMsgData data;
+
+      sequence<lll_rdm_msgs::msg::MetricTagsMsgData> tags;
+    };
+  };
+};

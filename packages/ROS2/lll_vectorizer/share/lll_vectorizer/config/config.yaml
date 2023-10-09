@@ -1,0 +1,9 @@
+lll_vectorizer_node:
+  ros__parameters:
+    use_sim_time: false
+    sub_topic: topic
+    sub_type: Custom
+    sub_package: custom_msg
+    pub_topic: vectorized_custom
+    field_names: ["int_1", "float_1", "list_num"]
+    keep_header: false

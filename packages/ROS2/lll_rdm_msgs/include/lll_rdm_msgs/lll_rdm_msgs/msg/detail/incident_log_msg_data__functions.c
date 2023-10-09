@@ -1,0 +1,299 @@
+// generated from rosidl_generator_c/resource/idl__functions.c.em
+// with input from lll_rdm_msgs:msg/IncidentLogMsgData.idl
+// generated code does not contain a copyright notice
+#include "lll_rdm_msgs/msg/detail/incident_log_msg_data__functions.h"
+
+#include <assert.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "rcutils/allocator.h"
+
+
+// Include directives for member types
+// Member `name`
+// Member `detail`
+// Member `domain`
+#include "rosidl_runtime_c/string_functions.h"
+
+bool
+lll_rdm_msgs__msg__IncidentLogMsgData__init(lll_rdm_msgs__msg__IncidentLogMsgData * msg)
+{
+  if (!msg) {
+    return false;
+  }
+  // in_progress
+  // name
+  if (!rosidl_runtime_c__String__init(&msg->name)) {
+    lll_rdm_msgs__msg__IncidentLogMsgData__fini(msg);
+    return false;
+  }
+  // detail
+  if (!rosidl_runtime_c__String__init(&msg->detail)) {
+    lll_rdm_msgs__msg__IncidentLogMsgData__fini(msg);
+    return false;
+  }
+  // domain
+  if (!rosidl_runtime_c__String__init(&msg->domain)) {
+    lll_rdm_msgs__msg__IncidentLogMsgData__fini(msg);
+    return false;
+  }
+  return true;
+}
+
+void
+lll_rdm_msgs__msg__IncidentLogMsgData__fini(lll_rdm_msgs__msg__IncidentLogMsgData * msg)
+{
+  if (!msg) {
+    return;
+  }
+  // in_progress
+  // name
+  rosidl_runtime_c__String__fini(&msg->name);
+  // detail
+  rosidl_runtime_c__String__fini(&msg->detail);
+  // domain
+  rosidl_runtime_c__String__fini(&msg->domain);
+}
+
+bool
+lll_rdm_msgs__msg__IncidentLogMsgData__are_equal(const lll_rdm_msgs__msg__IncidentLogMsgData * lhs, const lll_rdm_msgs__msg__IncidentLogMsgData * rhs)
+{
+  if (!lhs || !rhs) {
+    return false;
+  }
+  // in_progress
+  if (lhs->in_progress != rhs->in_progress) {
+    return false;
+  }
+  // name
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->name), &(rhs->name)))
+  {
+    return false;
+  }
+  // detail
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->detail), &(rhs->detail)))
+  {
+    return false;
+  }
+  // domain
+  if (!rosidl_runtime_c__String__are_equal(
+      &(lhs->domain), &(rhs->domain)))
+  {
+    return false;
+  }
+  return true;
+}
+
+bool
+lll_rdm_msgs__msg__IncidentLogMsgData__copy(
+  const lll_rdm_msgs__msg__IncidentLogMsgData * input,
+  lll_rdm_msgs__msg__IncidentLogMsgData * output)
+{
+  if (!input || !output) {
+    return false;
+  }
+  // in_progress
+  output->in_progress = input->in_progress;
+  // name
+  if (!rosidl_runtime_c__String__copy(
+      &(input->name), &(output->name)))
+  {
+    return false;
+  }
+  // detail
+  if (!rosidl_runtime_c__String__copy(
+      &(input->detail), &(output->detail)))
+  {
+    return false;
+  }
+  // domain
+  if (!rosidl_runtime_c__String__copy(
+      &(input->domain), &(output->domain)))
+  {
+    return false;
+  }
+  return true;
+}
+
+lll_rdm_msgs__msg__IncidentLogMsgData *
+lll_rdm_msgs__msg__IncidentLogMsgData__create()
+{
+  rcutils_allocator_t allocator = rcutils_get_default_allocator();
+  lll_rdm_msgs__msg__IncidentLogMsgData * msg = (lll_rdm_msgs__msg__IncidentLogMsgData *)allocator.allocate(sizeof(lll_rdm_msgs__msg__IncidentLogMsgData), allocator.state);
+  if (!msg) {
+    return NULL;
+  }
+  memset(msg, 0, sizeof(lll_rdm_msgs__msg__IncidentLogMsgData));
+  bool success = lll_rdm_msgs__msg__IncidentLogMsgData__init(msg);
+  if (!success) {
+    allocator.deallocate(msg, allocator.state);
+    return NULL;
+  }
+  return msg;
+}
+
+void
+lll_rdm_msgs__msg__IncidentLogMsgData__destroy(lll_rdm_msgs__msg__IncidentLogMsgData * msg)
+{
+  rcutils_allocator_t allocator = rcutils_get_default_allocator();
+  if (msg) {
+    lll_rdm_msgs__msg__IncidentLogMsgData__fini(msg);
+  }
+  allocator.deallocate(msg, allocator.state);
+}
+
+
+bool
+lll_rdm_msgs__msg__IncidentLogMsgData__Sequence__init(lll_rdm_msgs__msg__IncidentLogMsgData__Sequence * array, size_t size)
+{
+  if (!array) {
+    return false;
+  }
+  rcutils_allocator_t allocator = rcutils_get_default_allocator();
+  lll_rdm_msgs__msg__IncidentLogMsgData * data = NULL;
+
+  if (size) {
+    data = (lll_rdm_msgs__msg__IncidentLogMsgData *)allocator.zero_allocate(size, sizeof(lll_rdm_msgs__msg__IncidentLogMsgData), allocator.state);
+    if (!data) {
+      return false;
+    }
+    // initialize all array elements
+    size_t i;
+    for (i = 0; i < size; ++i) {
+      bool success = lll_rdm_msgs__msg__IncidentLogMsgData__init(&data[i]);
+      if (!success) {
+        break;
+      }
+    }
+    if (i < size) {
+      // if initialization failed finalize the already initialized array elements
+      for (; i > 0; --i) {
+        lll_rdm_msgs__msg__IncidentLogMsgData__fini(&data[i - 1]);
+      }
+      allocator.deallocate(data, allocator.state);
+      return false;
+    }
+  }
+  array->data = data;
+  array->size = size;
+  array->capacity = size;
+  return true;
+}
+
+void
+lll_rdm_msgs__msg__IncidentLogMsgData__Sequence__fini(lll_rdm_msgs__msg__IncidentLogMsgData__Sequence * array)
+{
+  if (!array) {
+    return;
+  }
+  rcutils_allocator_t allocator = rcutils_get_default_allocator();
+
+  if (array->data) {
+    // ensure that data and capacity values are consistent
+    assert(array->capacity > 0);
+    // finalize all array elements
+    for (size_t i = 0; i < array->capacity; ++i) {
+      lll_rdm_msgs__msg__IncidentLogMsgData__fini(&array->data[i]);
+    }
+    allocator.deallocate(array->data, allocator.state);
+    array->data = NULL;
+    array->size = 0;
+    array->capacity = 0;
+  } else {
+    // ensure that data, size, and capacity values are consistent
+    assert(0 == array->size);
+    assert(0 == array->capacity);
+  }
+}
+
+lll_rdm_msgs__msg__IncidentLogMsgData__Sequence *
+lll_rdm_msgs__msg__IncidentLogMsgData__Sequence__create(size_t size)
+{
+  rcutils_allocator_t allocator = rcutils_get_default_allocator();
+  lll_rdm_msgs__msg__IncidentLogMsgData__Sequence * array = (lll_rdm_msgs__msg__IncidentLogMsgData__Sequence *)allocator.allocate(sizeof(lll_rdm_msgs__msg__IncidentLogMsgData__Sequence), allocator.state);
+  if (!array) {
+    return NULL;
+  }
+  bool success = lll_rdm_msgs__msg__IncidentLogMsgData__Sequence__init(array, size);
+  if (!success) {
+    allocator.deallocate(array, allocator.state);
+    return NULL;
+  }
+  return array;
+}
+
+void
+lll_rdm_msgs__msg__IncidentLogMsgData__Sequence__destroy(lll_rdm_msgs__msg__IncidentLogMsgData__Sequence * array)
+{
+  rcutils_allocator_t allocator = rcutils_get_default_allocator();
+  if (array) {
+    lll_rdm_msgs__msg__IncidentLogMsgData__Sequence__fini(array);
+  }
+  allocator.deallocate(array, allocator.state);
+}
+
+bool
+lll_rdm_msgs__msg__IncidentLogMsgData__Sequence__are_equal(const lll_rdm_msgs__msg__IncidentLogMsgData__Sequence * lhs, const lll_rdm_msgs__msg__IncidentLogMsgData__Sequence * rhs)
+{
+  if (!lhs || !rhs) {
+    return false;
+  }
+  if (lhs->size != rhs->size) {
+    return false;
+  }
+  for (size_t i = 0; i < lhs->size; ++i) {
+    if (!lll_rdm_msgs__msg__IncidentLogMsgData__are_equal(&(lhs->data[i]), &(rhs->data[i]))) {
+      return false;
+    }
+  }
+  return true;
+}
+
+bool
+lll_rdm_msgs__msg__IncidentLogMsgData__Sequence__copy(
+  const lll_rdm_msgs__msg__IncidentLogMsgData__Sequence * input,
+  lll_rdm_msgs__msg__IncidentLogMsgData__Sequence * output)
+{
+  if (!input || !output) {
+    return false;
+  }
+  if (output->capacity < input->size) {
+    const size_t allocation_size =
+      input->size * sizeof(lll_rdm_msgs__msg__IncidentLogMsgData);
+    rcutils_allocator_t allocator = rcutils_get_default_allocator();
+    lll_rdm_msgs__msg__IncidentLogMsgData * data =
+      (lll_rdm_msgs__msg__IncidentLogMsgData *)allocator.reallocate(
+      output->data, allocation_size, allocator.state);
+    if (!data) {
+      return false;
+    }
+    // If reallocation succeeded, memory may or may not have been moved
+    // to fulfill the allocation request, invalidating output->data.
+    output->data = data;
+    for (size_t i = output->capacity; i < input->size; ++i) {
+      if (!lll_rdm_msgs__msg__IncidentLogMsgData__init(&output->data[i])) {
+        // If initialization of any new item fails, roll back
+        // all previously initialized items. Existing items
+        // in output are to be left unmodified.
+        for (; i-- > output->capacity; ) {
+          lll_rdm_msgs__msg__IncidentLogMsgData__fini(&output->data[i]);
+        }
+        return false;
+      }
+    }
+    output->capacity = input->size;
+  }
+  output->size = input->size;
+  for (size_t i = 0; i < input->size; ++i) {
+    if (!lll_rdm_msgs__msg__IncidentLogMsgData__copy(
+        &(input->data[i]), &(output->data[i])))
+    {
+      return false;
+    }
+  }
+  return true;
+}

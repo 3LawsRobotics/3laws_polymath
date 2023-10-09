@@ -1,0 +1,18 @@
+[Unit]
+Description=3Laws Diagnostic Module - ROS2 package
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=exec
+Restart=on-failure
+RestartSec=10
+User=@USERID@
+Group=@GROUPID@
+Environment=LLL_WS="@LLL_WS@"
+Environment=ROS_DISTRO="@ROS_DISTRO@"
+Environment=LAWS3_ROBOT_ID="@LAWS3_ROBOT_ID@"
+ExecStart=@LLL_WS@/packages/start_rdm.sh
+
+[Install]
+WantedBy=multi-user.target

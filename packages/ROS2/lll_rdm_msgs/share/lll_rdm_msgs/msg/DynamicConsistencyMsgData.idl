@@ -1,0 +1,36 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/DynamicConsistencyMsgData.msg
+// generated code does not contain a copyright notice
+
+
+module lll_rdm_msgs {
+  module msg {
+    struct DynamicConsistencyMsgData {
+      boolean state_timeout;
+
+      int64 time_since_last_state_msg;
+
+      boolean input_timeout;
+
+      int64 time_since_last_input_msg;
+
+      double input_domain_value;
+
+      double state_domain_value;
+
+      sequence<double> xdot_difference;
+
+      double xdot_difference_pdf_value;
+
+      double xdot_difference_pdf_value_normalized;
+
+      double xdot_difference_norm_1sigma;
+
+      double xdot_difference_norm_2sigma;
+
+      double xdot_difference_norm_3sigma;
+
+      double system_degradation_probability;
+    };
+  };
+};

@@ -1,0 +1,408 @@
+## 3Laws Robot Diagnostic Module configuration base
+
+## ROS2 specific
+interface:
+  process_niceness: 19 # 0 to 19
+  discovery:
+    active: false
+    param_depth: 20
+    update_rate_s: 60
+
+## Database config
+database:
+  client_clickhouse:
+    host: "e2sddjecqy.us-west-2.aws.clickhouse.cloud"
+    port: 9440
+    rethrow_exceptions: true
+    ping_before_query: false
+    send_retries: 1
+    retry_timeout: 10
+    protocol: 1
+    skip_cert_verification: false
+    metrics:
+      active: false
+      drop_oldest: true
+      queue_size: 1000
+      update_rate_ns: 1s
+    hf:
+      active: false
+      drop_oldest: true
+      queue_size: 1000
+      update_rate_ns: 1s
+    metadata:
+      active: false
+      drop_oldest: true
+      queue_size: 10000
+      update_rate_ns: 1s
+  client_influx:
+    host: us-east-1-1.aws.cloud2.influxdata.com
+    port: 443
+    protocol: 1
+    request_timeout: 2
+    metrics:
+      active: true
+      drop_oldest: true
+      queue_size: 10000
+      update_rate_ns: 1s
+    hf:
+      active: false
+      drop_oldest: true
+      queue_size: 10000
+      update_rate_ns: 1s
+    metadata:
+      active: true
+      drop_oldest: true
+      queue_size: 10000
+      update_rate_ns: 1s
+
+## Diagnostic Module config
+diagnostic_module:
+  # Inputs
+  inputs:
+    controls:
+      actuators:
+        actuators: {}
+        combined_input_mask: []
+        combined_input_id: ""
+        node_id: ""
+      controllers:
+        controllers: {}
+      path_planning:
+        paths: {}
+      supervisor_info:
+        supervisors: {}
+    localization:
+      odometry:
+        signals: {}
+      state_estimation: ~
+    sensors:
+      laserscan:
+        laserscans: {}
+      loadcell:
+        loadcells: {}
+    systems:
+      finite_state:
+        states_machines: {}
+      node_publish_status: ~
+      system_resources: ~
+      signal_float:
+        signals: {}
+      signal_scalar: ~
+      text_log: ~
+
+  # Metrics
+  metrics:
+    clock_health:
+      active: true
+      subscription:
+        update_rate_ns: 1s
+        drop_oldest: true
+        queue_size: 1000
+      ntp_client:
+        hostname: pool.ntp.org
+        port: 123
+        receive_timeout_us: 1000000
+        clock_epoch_offset_from_1900_s: 2208988800
+        offset_samples: 1
+        wait_between_offset_requests_us: 100000
+      utc_update_rate_ns: 60s
+      clocks: []
+
+    control_tracking:
+      active: true
+      publish_raw_tacking_error: true
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      controllers: []
+
+    dynamic_consistency:
+      active: true
+      publish_rate_ns: 1s
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      window_half_size: 2
+      smoothing_order: 2
+      state:
+        id: ""
+        timeout_ns: 1s
+      input:
+        id: ""
+        timeout_ns: 1s
+
+    feedback_loop_characterization:
+      active: true
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      publish_raw_state: false
+      publish_raw_input: false
+
+    finite_state:
+      active: true
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+
+    metric_passthrough:
+      active: true
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      metrics: []
+
+    node_health:
+      active: true
+      publish_rate_ns: 1s
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      nodes: []
+
+    behavior_safety:
+      active: true
+      publish_rate_ns: 1s
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      laserscans: {}
+      supervisors: {}
+
+    planning_consistency:
+      active: true
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      publish_raw_tracking_error: false
+      input_weight: 1e-9
+      qp_params:
+        verbose: false
+        alpha: 1.6
+        rho: 0.1
+        sigma: 1e-6
+        scaling: true
+        eps_abs: 1e-5
+        eps_rel: 1e-5
+        eps_primal_inf: 1e-6
+        eps_dual_inf: 1e-6
+        max_iter: 1000
+        max_time: 100ms
+        stop_check_iter: 25
+        polish: true
+        polish_iter: 5
+        delta: 1e-6
+      paths: {}
+
+    sensor_characterization:
+      active: true
+      publish_rate_ns: 1s
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      laserscan:
+        moving_ratio: 0.3
+        queue_length: 10
+        range_ratio: 0.008
+        min_rad: 0.1
+        nb_of_sectors: 36
+        laserscans: []
+      loadcell:
+        loadcells: {}
+
+    systems_health:
+      active: true
+      publish_rate_ns: 1s
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      systems:
+        - id: auto
+          timeout_ns: 1s
+      processes: []
+
+    signal_health:
+      active: true
+      subscription:
+        update_rate_ns: 1s
+        drop_oldest: true
+        queue_size: 10000
+      signals: {}
+
+    text_log:
+      active: true
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+
+    incidents_log:
+      active: true
+      min_event_time: 1s
+      publish_rate_ns: 0.1s
+      min_displayed_severity: minor
+      subscription:
+        drop_oldest: true
+        queue_size: 1000
+      collision:
+        limit_dists: []
+      computer:
+        limit_cpu_loads: []
+        limit_disk_usages: []
+        limit_ram_usages: []
+      clock:
+        limit_utc_deviations: []
+        limit_rtc_deviations: []
+      node_health:
+        timeout_severity: ~
+        not_ok_severity: ~
+        limit_delay_bounds: []
+        limit_rate_bounds: []
+      obstructions:
+        obstruction_severity: ~
+      signal_health:
+        nan_severity: ~
+        zero_severity: ~
+        subnormal_severity: ~
+        inf_severity: ~
+        bad_timestamp_severity: ~
+        limit_bounds: []
+      dynamic:
+        limit_xdot_difference: []
+        input_domain_severity: ~
+        state_domain_severity: ~
+      tracking:
+        limit_tracking_difference: [1, 0.5, 0.1]
+
+  influx_outputs:
+    metrics:
+      active: true
+      params:
+        internal:
+          drop_oldest: true
+          queue_size: 10
+          update_rate_ns: 1s
+        influx:
+          host: ""
+          port: 0
+          org: ""
+          token: ""
+          bucket: ""
+          request_timeout: 5
+          protocol: 0
+        extra_tags: {}
+    metadata:
+      active: true
+      params:
+        internal:
+          drop_oldest: true
+          queue_size: 10
+          update_rate_ns: 1s
+        influx:
+          host: ""
+          port: 0
+          org: ""
+          token: ""
+          bucket: ""
+          request_timeout: 5
+          protocol: 0
+        extra_tags: {}
+    hf:
+      active: true
+      params:
+        internal:
+          drop_oldest: true
+          queue_size: 10
+          update_rate_ns: 1s
+        influx:
+          host: ""
+          port: 0
+          org: ""
+          token: ""
+          bucket: ""
+          request_timeout: 5
+          protocol: 0
+        extra_tags: {}
+
+  clickhouse_outputs:
+    metrics:
+      active: true
+      params:
+        internal:
+          drop_oldest: true
+          queue_size: 10
+          update_rate_ns: 1s
+        clickhouse:
+          host: ""
+          port: 0
+          default_database: ""
+          user: ""
+          password: ""
+          rethrow_exceptions: true
+          ping_before_query: false
+          send_retries: 1
+          retry_timeout: 10
+          active_ssl: true
+          skip_cert_verification: false
+        extra_tags: {}
+    metadata:
+      active: true
+      params:
+        internal:
+          drop_oldest: true
+          queue_size: 10
+          update_rate_ns: 1s
+        clickhouse:
+          host: ""
+          port: 0
+          default_database: ""
+          user: ""
+          password: ""
+          rethrow_exceptions: true
+          ping_before_query: false
+          send_retries: 1
+          retry_timeout: 10
+          active_ssl: true
+          skip_cert_verification: false
+        extra_tags: {}
+    hf:
+      active: true
+      params:
+        internal:
+          drop_oldest: true
+          queue_size: 10
+          update_rate_ns: 1s
+        clickhouse:
+          host: ""
+          port: 0
+          default_database: ""
+          user: ""
+          password: ""
+          rethrow_exceptions: true
+          ping_before_query: false
+          send_retries: 1
+          retry_timeout: 10
+          active_ssl: true
+          skip_cert_verification: false
+        extra_tags: {}
+
+  logger:
+    company_id: ""
+    hardware_id: ""
+    robot_id: ""
+    run_id: ""
+    influx_logger:
+      influx:
+        host: ""
+        port: 0
+        org: ""
+        token: ""
+        bucket: ""
+        request_timeout: 5
+        protocol: 0
+      extra_tags: {}
+      drop_oldest: true
+      queue_size: 100000
+      update_rate_ns: 10s
+      retries: 4
+      sleep_between_retries_ns: 1s
+      log_level: debug

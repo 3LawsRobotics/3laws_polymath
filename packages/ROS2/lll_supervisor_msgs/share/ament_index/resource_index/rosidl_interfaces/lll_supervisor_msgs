@@ -1,0 +1,16 @@
+msg/InputConstraints.idl
+msg/InputConstraints.msg
+msg/InputFilteringResult.idl
+msg/InputFilteringResult.msg
+msg/ObjectDetection2D.idl
+msg/ObjectDetection2D.msg
+msg/ObjectDetections.idl
+msg/ObjectDetections.msg
+msg/RegulationData.idl
+msg/RegulationData.msg
+msg/SupervisorMetadata.idl
+msg/SupervisorMetadata.msg
+srv/InputFiltering.idl
+srv/InputFiltering.srv
+srv/InputFiltering_Request.msg
+srv/InputFiltering_Response.msg

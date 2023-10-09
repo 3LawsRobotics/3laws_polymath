@@ -1,0 +1,75 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/IncidentLogMsgData.msg
+// generated code does not contain a copyright notice
+
+
+module lll_rdm_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "##" "\n"
+      "## Severity level constants" "\n"
+      "##" "\n"
+      "byte LOW=3 #debug level" "\n"
+      "byte MEDIUM=2  #general level" "\n"
+      "byte SEVERE=1  #warning level" "\n"
+      "byte CRITICAL=0 #error level")
+    struct IncidentLogMsgData {
+      @verbatim (language="comment", text=
+        "##" "\n"
+        "## Type level constants" "\n"
+        "##" "\n"
+        "byte SYSTEM   = 1" "\n"
+        "byte HARDWARE = 2" "\n"
+        "byte SAFETY   = 3" "\n"
+        "byte CLOCK    = 4" "\n"
+        "byte SENSOR   = 5" "\n"
+        "byte SIGNAL   = 6" "\n"
+        "byte TRACKING = 7" "\n"
+        "byte DYNAMIC  = 8" "\n"
+        "##" "\n"
+        "## SubType level constants" "\n"
+        "##" "\n"
+        "# system" "\n"
+        "byte TIMEOUT = 10" "\n"
+        "byte NOT_OK  = 11" "\n"
+        "# Hardware" "\n"
+        "byte FULL_RAM  = 20" "\n"
+        "byte FULL_CPU  = 21" "\n"
+        "byte FULL_DISK = 22" "\n"
+        "# Collision" "\n"
+        "byte COLLISION      = 30" "\n"
+        "byte NEAR_COLLISION = 31" "\n"
+        "# Clock" "\n"
+        "byte RTC_OFFSET = 40" "\n"
+        "byte UTC_OFFSET = 41" "\n"
+        "# Sensor" "\n"
+        "byte OBSTRUCTION = 50" "\n"
+        "byte NOISE       = 51" "\n"
+        "# Signal" "\n"
+        "byte NAN_VALUES      = 60" "\n"
+        "byte SUBNORMAL_FLOAT = 61" "\n"
+        "byte INFINITE_VALUES = 62" "\n"
+        "byte EXACT_ZERO      = 63" "\n"
+        "byte BAD_TIMESTAMP   = 64" "\n"
+        "# tracking" "\n"
+        "byte TRACKING_ERROR = 70" "\n"
+        "# Dynamic" "\n"
+        "byte INPUT_DOMAIN     = 80" "\n"
+        "byte STATE_DOMAIN     = 81" "\n"
+        "byte STATE_DIFFERENCE = 82" "\n"
+        "##" "\n"
+        "## Fields" "\n"
+        "##" "\n"
+        "byte type" "\n"
+        "byte sub_type" "\n"
+        "byte severity")
+      boolean in_progress;
+
+      string name;
+
+      string detail;
+
+      string domain;
+    };
+  };
+};

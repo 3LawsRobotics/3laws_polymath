@@ -1,0 +1,4 @@
+
+
+bool ready
+InputFilteringResult res

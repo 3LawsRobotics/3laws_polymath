@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/SensorNoiseMetricMsgData.msg
+// generated code does not contain a copyright notice
+
+#include "lll_rdm_msgs/msg/SensorNoiseData.idl"
+
+module lll_rdm_msgs {
+  module msg {
+    struct SensorNoiseMetricMsgData {
+      int64 time_since_last_msg;
+
+      lll_rdm_msgs::msg::SensorNoiseData noise_data;
+    };
+  };
+};

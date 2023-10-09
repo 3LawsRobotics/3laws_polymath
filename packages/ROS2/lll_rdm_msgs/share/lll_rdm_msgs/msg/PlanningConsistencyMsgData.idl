@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/PlanningConsistencyMsgData.msg
+// generated code does not contain a copyright notice
+
+
+module lll_rdm_msgs {
+  module msg {
+    struct PlanningConsistencyMsgData {
+      boolean consistent_lengths;
+
+      boolean consistent_state_size;
+
+      boolean consistent_input_size;
+
+      boolean strictly_sorted_time;
+
+      double acceleration_inconsistency;
+
+      sequence<double> acceleration_inconsistency_values;
+    };
+  };
+};

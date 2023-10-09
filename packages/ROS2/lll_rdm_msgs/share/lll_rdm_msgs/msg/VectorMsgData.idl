@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/VectorMsgData.msg
+// generated code does not contain a copyright notice
+
+
+module lll_rdm_msgs {
+  module msg {
+    struct VectorMsgData {
+      string id;
+
+      sequence<double> values;
+    };
+  };
+};

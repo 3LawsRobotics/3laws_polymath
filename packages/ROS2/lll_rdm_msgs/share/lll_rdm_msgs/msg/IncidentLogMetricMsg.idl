@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/IncidentLogMetricMsg.msg
+// generated code does not contain a copyright notice
+
+#include "lll_rdm_msgs/msg/IncidentLogMsgData.idl"
+#include "lll_rdm_msgs/msg/MetricTagsMsgData.idl"
+#include "lll_rdm_msgs/msg/MsgHeader.idl"
+
+module lll_rdm_msgs {
+  module msg {
+    struct IncidentLogMetricMsg {
+      lll_rdm_msgs::msg::MsgHeader header;
+
+      lll_rdm_msgs::msg::IncidentLogMsgData data;
+
+      sequence<lll_rdm_msgs::msg::MetricTagsMsgData> tags;
+    };
+  };
+};

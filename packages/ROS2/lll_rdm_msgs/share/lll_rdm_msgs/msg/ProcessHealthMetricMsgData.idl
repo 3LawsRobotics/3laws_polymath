@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/ProcessHealthMetricMsgData.msg
+// generated code does not contain a copyright notice
+
+
+module lll_rdm_msgs {
+  module msg {
+    struct ProcessHealthMetricMsgData {
+      double cpu_usage;
+
+      double cpu_usage_total;
+
+      uint64 ram_usage;
+
+      uint64 n_threads;
+
+      double process_up_time;
+
+      double process_run_time;
+
+      uint64 io_total_read;
+
+      uint64 io_total_write;
+
+      uint64 io_disk_read;
+
+      uint64 io_disk_write;
+    };
+  };
+};

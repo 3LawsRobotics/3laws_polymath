@@ -1,0 +1,13 @@
+bool state_timeout
+int64 time_since_last_state_msg
+bool input_timeout
+int64 time_since_last_input_msg
+float64 input_domain_value
+float64 state_domain_value
+float64[] xdot_difference
+float64 xdot_difference_pdf_value
+float64 xdot_difference_pdf_value_normalized
+float64 xdot_difference_norm_1sigma
+float64 xdot_difference_norm_2sigma
+float64 xdot_difference_norm_3sigma
+float64 system_degradation_probability

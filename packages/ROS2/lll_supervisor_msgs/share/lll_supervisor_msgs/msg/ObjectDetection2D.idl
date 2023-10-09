@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_supervisor_msgs/msg/ObjectDetection2D.msg
+// generated code does not contain a copyright notice
+
+
+module lll_supervisor_msgs {
+  module msg {
+    struct ObjectDetection2D {
+      uint64 track_id;
+
+      string class_name;
+
+      double x_center;
+
+      double y_center;
+
+      double x_radius;
+
+      double y_radius;
+
+      @default (value=-1.0)
+      double safety_index;
+    };
+  };
+};

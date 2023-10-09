@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from lll_rdm_msgs/msg/SensorNoiseData.msg
+// generated code does not contain a copyright notice
+
+
+module lll_rdm_msgs {
+  module msg {
+    struct SensorNoiseData {
+      double average_std_error;
+
+      double max_std_error;
+
+      double angle_max_error;
+
+      double percent_of_sigma;
+
+      double p_value;
+
+      boolean reject_model;
+    };
+  };
+};

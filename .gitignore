@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+*.tmp
+.cache
+.clangd
+.vscode
+.codechecker
+.devcontainer
+CMakeUserPresets.json
+build/
+log/
+conan.lock
+conanbuildinfo.txt
+conaninfo.txt
+doc/
+graph_info.json
+install/
+__pycache__/
+logs/
+.thumbs

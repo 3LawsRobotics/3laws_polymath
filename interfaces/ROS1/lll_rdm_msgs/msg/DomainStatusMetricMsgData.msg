@@ -1,0 +1,5 @@
+string system_status
+string behavior_status
+string hardware_status
+string perception_status
+string control_status
