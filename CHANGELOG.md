@@ -2,6 +2,26 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.3] - 2023-10-11
+### Release highlights
+* Hotfix
+### New
+* N/A
+### Improvements
+* Remove warning when sourcing 3laws_setup.sh
+### Bug fixes
+* N/A
+
+## [0.9.2] - 2023-10-10
+### Release highlights
+* Prepare configuration file for new interfaces
+### New
+* Support for kinematic model
+### Improvements
+* Better error messages when influx client fails
+### Bug fixes
+* Fix extra nodes and signals
+
 ## [0.9.1] - 2023-10-09
 ### Release highlights
 * Minor update
@@ -12,7 +32,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 * Improved config documentation
 ### Bug fixes
 * Fix finite state node id
-
 
 ## [0.9.0] - 2023-10-04
 ### Release highlights

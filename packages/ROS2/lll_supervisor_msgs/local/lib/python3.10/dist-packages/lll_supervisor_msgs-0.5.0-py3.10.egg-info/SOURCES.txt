@@ -4,12 +4,3 @@ lll_supervisor_msgs.egg-info/PKG-INFO
 lll_supervisor_msgs.egg-info/SOURCES.txt
 lll_supervisor_msgs.egg-info/dependency_links.txt
 lll_supervisor_msgs.egg-info/top_level.txt
-lll_supervisor_msgs/msg/__init__.py
-lll_supervisor_msgs/msg/_input_constraints.py
-lll_supervisor_msgs/msg/_input_filtering_result.py
-lll_supervisor_msgs/msg/_object_detection2_d.py
-lll_supervisor_msgs/msg/_object_detections.py
-lll_supervisor_msgs/msg/_regulation_data.py
-lll_supervisor_msgs/msg/_supervisor_metadata.py
-lll_supervisor_msgs/srv/__init__.py
-lll_supervisor_msgs/srv/_input_filtering.py

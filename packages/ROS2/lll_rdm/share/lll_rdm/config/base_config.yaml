@@ -158,7 +158,7 @@ diagnostic_module:
       subscription:
         drop_oldest: true
         queue_size: 1000
-      nodes: []
+      nodes: {}
 
     behavior_safety:
       active: true

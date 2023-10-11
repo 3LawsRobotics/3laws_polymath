@@ -16,7 +16,7 @@ set(_lll_rdm_msgs_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT lll_rdm_msgs_FIND_QUIETLY)
-  message(STATUS "Found lll_rdm_msgs: 0.9.1 (${lll_rdm_msgs_DIR})")
+  message(STATUS "Found lll_rdm_msgs: 0.9.3 (${lll_rdm_msgs_DIR})")
 endif()
 
 # warn when using a deprecated package
