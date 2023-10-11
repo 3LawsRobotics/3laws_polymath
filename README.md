@@ -84,7 +84,12 @@ IncludeLaunchDescription(
 The following docker image with the diagnostic module already isntalled is available for you at `ghcr.io/3lawsrobotics/3laws_rdm_polymath:latest`.
 This image is updated everytime we release a new version of the software and includes any change you made to your config file and pushed to the repo.
 
-You can run it with:
+First, you need to configure docker to get access to 3Laws image registry:
+```bash
+echo Z2hwX0JtcXdKZ1luMlVaaDhrZEl3bGxtWVcwSUVPQVNGbTRRZlZsOAo= | base64 --decode | docker login ghcr.io/3lawsrobotics -u 3lawscustomers --password-stdin
+```
+
+You can then run it with:
 ```bash
 docker run -it --rm --name 3laws_rdm -u $(id -u):$(id -g) -e LAWS3_ROBOT_ID=<ROBOT_ID> --net=host --pid=host -v /dev/shm:/dev/shm -v /etc/machine-id:/3laws_robotics/machine-id ghcr.io/3lawsrobotics/3laws_rdm_polymath:latest
 ```
