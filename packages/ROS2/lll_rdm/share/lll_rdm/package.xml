@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>lll_rdm</name>
-  <version>0.9.3</version>
+  <version>0.9.4</version>
   <description>3Laws Robot Diagnostic Module - ROS2</description>
   <maintainer email="tgurriet@3laws.io">Thomas Gurriet</maintainer>
   <license>Exclusive property of 3Laws Robotics Inc.</license>

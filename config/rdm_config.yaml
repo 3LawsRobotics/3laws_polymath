@@ -94,6 +94,7 @@ robot_description:
         sensor_id: laserscan_1 # Display name for this laserscan, must be UNIQUE among all laserscans
         signal_min_rate: 1s # Maximum time without receiving data before signal is considered timed out
         noise_one_sigma: 0.025 # expected standard_error of the sensor (given by the manufacturer, often like: precision = +-2sigma)
+        n_rays: 1000 # Expected number of rays in the laserscan
         transform: # Specification of frame w.r.t which the measurement is expressed
           parent_frame_id: robot # Id of parent frame
           pose: # [optional] Pose w.r.t parent frame

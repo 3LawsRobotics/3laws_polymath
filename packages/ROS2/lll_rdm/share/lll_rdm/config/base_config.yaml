@@ -62,9 +62,10 @@ diagnostic_module:
     controls:
       actuators:
         actuators: {}
-        combined_input_mask: []
-        combined_input_id: ""
         node_id: ""
+        combined_input_topic_id: ""
+        combined_input_signal_id: ""
+        combined_input_mask: []
       controllers:
         controllers: {}
       path_planning:

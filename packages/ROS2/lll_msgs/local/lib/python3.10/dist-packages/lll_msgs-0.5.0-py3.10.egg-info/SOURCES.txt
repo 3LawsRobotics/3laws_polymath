@@ -4,3 +4,6 @@ lll_msgs.egg-info/PKG-INFO
 lll_msgs.egg-info/SOURCES.txt
 lll_msgs.egg-info/dependency_links.txt
 lll_msgs.egg-info/top_level.txt
+lll_msgs/msg/__init__.py
+lll_msgs/msg/_float64_vector_stamped.py
+lll_msgs/msg/_trajectory.py
