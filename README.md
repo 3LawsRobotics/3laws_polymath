@@ -52,7 +52,7 @@ $HOME/3lawsRoboticsInc/3laws_polymath/packages/start_rdm.sh log_level:=<trace|de
 
 If you want to start the diagnostic module as part of your launch system, add the following line to your .bashrc:
 ```bash
-source $PWD/$PACKAGE_DIR/packages/ROS2/local_setup.bash"
+source "$HOME/3lawsRoboticsInc/3laws_polymath/packages/3laws_setup.sh"
 ```
 Source your bashrc : `source ~/.bashrc`, and add the following action to the LaunchDescription in your launch file:
 ```
